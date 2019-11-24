@@ -1,0 +1,191 @@
+<resources>
+    <string name="app_name">Naukri manthan</string>
+
+    <string name="logo">logo</string>
+    <string name="mobileNumber">Mobile number</string>
+    <string name="forget_password">Forget?</string>
+    <string name="loginRegistration">Login or Registration</string>
+    <string name="next">Next</string>
+    <string name="errorMobile">Invalid mobile number</string>
+    <string name="network_error">Network error</string>
+    <string name="password"> Password</string>
+    <string name="login">Login</string>
+    <string name="errorPassword">Invalid password</string>
+    <string name="textCode">Enter your friend refer code or mobile number</string>
+    <string name="reference_code">Reference code</string>
+    <string name="click_here">click here</string>
+    <string name="i_agree_with">I agree with</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="registration">Registration</string>
+    <string name="errorConfirmPassword">Password does not match</string>
+    <string name="try_again">Try again</string>
+    <string name="new_registration_sign_up">New registration sign up</string>
+
+    <string name="str_ShowOnPermisstion">Please Allow permission for your app.
+        If you deny permissions will not be able to use functionality of this app.</string>
+    <string name="userName">User name</string>
+    <string name="email">Email</string>
+    <string name="errorUserName">Enter user name</string>
+    <string name="errorEmail">Invalid email address</string>
+    <string name="logout">Logout</string>
+    <string name="about_us">About us</string>
+    <string name="tc"><![CDATA[T & C]]></string>
+    <string name="acceptTc"><![CDATA[Accept T&C and privacy policy]]></string>
+    <string name="home">Home</string>
+    <string name="errorPasswordLength">Password length should be at least 6 character</string>
+    <string name="signUp">Sign up</string>
+
+
+    <!--facebook-->
+    <string name="facebook_app_id" translatable="false">2189559427977049</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb2189559427977049</string>
+
+
+    <string name="finish">Finish</string>
+    <string name="back">Back</string>
+    <string name="welcome">Welcome</string>
+    <string name="skip">Skip</string>
+    <string name="logout_message">Are you sure you want to logout?</string>
+
+    <string name="view_all"><u>View All</u></string>
+    <string name="t_amp_c"><![CDATA[T&C]]></string>
+    <string name="and">and</string>
+    <string name="_91">+91</string>
+    <string name="invalidCountryCode">Invalid country code</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="gps_setting">GPS setting</string>
+    <string name="gps_off">GPS off</string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="log_in">LOGIN</string>
+    <string name="enable_gps">Enable GPS for searching</string>
+    <string name="enable">Enable</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="pressBackToExit">Press back button again to exit</string>
+    <string name="userProfile">User profile</string>
+    <string name="editProfile">Edit profile</string>
+    <string name="editChangeProfile">Edit or change profile</string>
+    <string name="changePassword">Change password</string>
+    <string name="changePasswordAccount">Change account password</string>
+    <string name="bank">Bank</string>
+    <string name="noTaskToView">No task to view</string>
+    <string name="time">Time</string>
+    <string name="colon">:</string>
+    <string name="dob_mm_dd_yyyy">DOB (mm/dd/yyyy)</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="city">City</string>
+    <string name="area">Area</string>
+    <string name="state">State</string>
+    <string name="reset">Reset</string>
+    <string name="update">Update</string>
+    <string name="bank_detail">Bank detail</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="account_number">Account number</string>
+    <string name="account_holder_name">Account holder name</string>
+    <string name="notice_bank_change"><i>You will be charged Rs.5 from your wallet on each bank verification.</i></string>
+    <string name="bank_name">Bank name</string>
+    <string name="old_password">Old password</string>
+    <string name="confiorm_password">Confiorm password</string>
+    <string name="new_password">New password</string>
+    <string name="change_bank">Change bank</string>
+    <string name="change_password">Change password</string>
+    <string name="reset_password">Reset password</string>
+    <string name="notice_reset_password"><i>You will receive a one time password message, carrier rates may apply</i></string>
+    <string name="now_you_can_go_back">Now you can go back</string>
+    <string name="detailsSendsToYourMail">Details send to your registered email</string>
+    <string name="passwordChangeSuccessfully">Password change successfully</string>
+    <string name="balance">Balance</string>
+    <string name="notice_forgot_password"><i>You will receive password on your registerd email id</i></string>
+    <string name="verify_mobile_msg">Please Verify Your Registered Mobile No.</string>
+
+
+    <string name="filter">Filter</string>
+    <string name="end_date">End date</string>
+    <string name="start_date">Start date</string>
+    <string name="data_null_error">Some thing error, please try after some time.</string>
+    <string name="network_not_found">Network error, please try after some time</string>
+    <string name="update_available">New update is available</string>
+    <string name="enable_lock_msg">Enable Lock screen to earn daily If lock screen will Disable you will Get only 25% Amount of Today\'s Earning</string>
+    <string name="timer">00:00</string>
+    <!--ca-app-pub-8423837804323248/5967765563-->
+    <!--Video ads-->
+
+    <!--ca-app-pub-8423837804323248/6198371830-->
+    <!--Full screen ads-->
+
+    <!--ca-app-pub-8423837804323248/6301564217-->
+    <!--banner ads-->
+
+    <string name="adsInterstitial" translatable="false">@string/INTERSTITIAL_ID</string>
+    <string name="adsBannerSplash" translatable="false">@string/BANNER_ID</string>
+    <!--<string name="adsVideoHome" translatable="false">@string/VIDEO_ID</string>-->
+    <string name="search">Search</string>
+    <string name="job_profile">Job profile</string>
+    <string name="job_title_type_or_company">job title, type or company</string>
+    <string name="job_title">Job title</string>
+    <string name="where">Where</string>
+    <string name="city_state_or_pin_code">city, state or pin-code</string>
+    <string name="finds_jobs">Finds jobs</string>
+    <string name="errorJobTitle">Job title can\'t be left blank</string>
+    <string name="errorJobLocation">Job location can\'t be left blank</string>
+    <string name="sign_in">Sign in</string>
+    <string name="or">Or</string>
+    <string name="signInWithLinkedIn">Sign in with LinkedIn</string>
+    <string name="signInWithGoogle">Sign in with Google</string>
+    <string name="not_a_member_yet_create_account">Not a member yet? Create account</string>
+
+
+    <string name="appTabs_1">Accounting</string>
+    <string name="appTabs_2">Bank jobs</string>
+    <string name="appTabs_3">IT and\n software</string>
+    <string name="appTabs_4">Management</string>
+    <string name="posted_date">Posted date :</string>
+    <string name="recent_jobs_alert">Recent jobs alert</string>
+    <string name="recommended_jobs_for_you">Recommended jobs for you</string>
+    <string name="local_jobs">Local jobs</string>
+    <string name="government_jobs">Government jobs</string>
+    <string name="popular_jobs">Popular jobs</string>
+    <string name="category">Category</string>
+    <string name="allCategory">ALL CATEGORY</string>
+    <string name="view_more">view more</string>
+    <string name="recommended_jobs">Recommended jobs</string>
+    <string name="recent_jobs">Recent jobs</string>
+    <string name="alert">Alert</string>
+    <string name="showing_categories">Showing categories</string>
+    <string name="start">Start</string>
+    <string name="view_details">View details</string>
+
+
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="quickstart_message">Click the SUBSCRIBE TO WEATHER button below to subscribe to the
+        weather topic. Messages sent to the weather topic will be received. The LOG TOKEN button logs the
+        InstanceID token to logcat.</string>
+    <string name="subscribe_to_weather">Subscribe To Weather</string>
+    <string name="log_token">Log Token</string>
+
+    <string name="msg_subscribed">Subscribed to weather topic</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+
+    <string name="default_notification_channel_name" translatable="true">Weather</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="close">close</string>
+    <string name="feedback">Feedback</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="name">name</string>
+    <string name="fieldOfInterest">Field of interest</string>
+    <string name="notifications">Notifications</string>
+    <string name="filter_option">Filter option</string>
+    <string name="this_is_a_custom_layout">This is a custom layout This is a custom layout This is a custom layout This is a custom layout</string>
+    <string name="title">Title</string>
+    <string name="_10_14_pm">10:14 PM</string>
+</resources>

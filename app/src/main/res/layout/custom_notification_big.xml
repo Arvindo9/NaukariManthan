@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_55dp"
+            android:layout_height="@dimen/_55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5dp">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/image_default"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_8dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher_round" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5dp"
+            android:layout_marginRight="@dimen/_5dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_5dp"
+                    android:layout_toLeftOf="@+id/time"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:text="10:14 PM"
+                    android:textAppearance="@style/TextAppearance.Compat.Notification.Time"
+                    android:textColor="@color/moreDarkgrey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="@dimen/_5dp"
+                    android:layout_toStartOf="@+id/app_icon"
+                    android:layout_toLeftOf="@+id/app_icon"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="This is a custom layout This is a custom layout This is a custom layout This is a custom layout"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/moreDarkgrey" />
+
+                <ImageView
+                    android:id="@+id/app_icon"
+                    android:layout_width="@dimen/_26dp"
+                    android:layout_height="@dimen/_26dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:src="@mipmap/ic_launcher_round" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/bigView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200dp"
+        android:layout_below="@+id/rel_lyt">
+
+        <ImageView
+            android:id="@+id/image_big"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/no_image" />
+
+        <TextView
+            android:id="@+id/textBig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/notification_text_bg"
+            android:padding="5dp"
+            android:text="This is a custom layout This is a custom layout This is a custom layout This is a custom layout"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/white" />
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/no_image" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/msg"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/banner"
+        android:textColor="@color/moreDarkgrey"
+        android:paddingLeft="@dimen/_8dp"
+        android:paddingRight="@dimen/_8dp"
+        android:paddingTop="@dimen/_4dp"
+        android:paddingBottom="@dimen/_2dp"
+        android:text="msg" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/msg"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_8dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_launcher" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grayDark"
+            android:paddingLeft="@dimen/_4dp"
+            android:paddingRight="@dimen/_8dp"
+            android:paddingTop="@dimen/_8dp"
+            android:paddingBottom="@dimen/_8dp"
+            android:text="Boldsky" />
+    </LinearLayout>
+</RelativeLayout>

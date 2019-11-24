@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <import type="android.view.View" />
+
+    <variable
+        name="data"
+        type="com.solution.naukarimanthan.ui.category.CategoryViewModel" />
+
+    <variable
+        name="dataBinding"
+        type="com.solution.naukarimanthan.utils.BindingUtils" />
+</data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar_activity"
+        bind:data="@{data}"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/jobsCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/_10dp"
+            android:paddingBottom="@dimen/_10dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/_10dp"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@{dataBinding.areaLocation}"
+                android:textSize="@dimen/_18sp"
+                android:textStyle="bold"
+                tools:text="title"
+                android:layout_alignStart="@+id/locationButton"
+                android:layout_alignLeft="@+id/locationButton"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_10dp" />
+
+            <RadioButton
+                android:onClick="@{() -> data.onLocationButtonClick()}"
+                android:id="@+id/locationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:text="@string/showing_categories"
+        android:textStyle="italic"
+        android:textSize="@dimen/_20sp"
+        android:textColor="@color/colorPrimary"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/_10dp"
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:adapterCategory="@{data.menuTabsArrayList}"
+        tools:itemCount="10"
+        tools:listitem="@layout/category_adapter">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
+</layout>

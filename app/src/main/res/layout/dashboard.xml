@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.solution.naukarimanthan.ui.dashboard.DashboardViewModel" />
+
+        <variable
+            name="dataBinding"
+            type="com.solution.naukarimanthan.utils.BindingUtils" />
+    </data>
+
+<FrameLayout
+    android:id="@+id/mainFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/mainLayout"
+    android:fitsSystemWindows="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:fitsSystemWindows="false"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:layout_scrollFlags="scroll"-->
+            <!--app:titleEnabled="false">-->
+
+            <include
+                android:id="@+id/toolbarLayout"
+                layout="@layout/toolbar"
+                bind:data="@{data}"/>
+
+        <RelativeLayout
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            android:elevation="@dimen/_4dp"
+            android:clickable="true"
+            android:visibility="gone"
+            android:gravity="center_vertical">
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/clearBtn"
+                android:drawableLeft="@drawable/ic_search_gray"
+                android:drawablePadding="@dimen/_10dp"
+                android:background="@android:color/white"
+                android:hint="Search"
+                android:maxLines="1"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@android:color/black"
+                android:padding="@dimen/_10dp"
+                android:singleLine="true"
+                android:layout_toStartOf="@+id/clearBtn"
+                android:drawableStart="@drawable/ic_search_gray"
+                />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/clearBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_4dp"
+                android:padding="@dimen/_10dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_close"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_4dp" />
+        </RelativeLayout>
+
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/AppTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/white" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="8dp"
+            android:id="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:max="100"
+            android:background="@color/white"
+            android:progress="45"
+            android:visibility="@{dataBinding.progressBarVisibility ? View.VISIBLE : View.GONE}"
+            android:indeterminateOnly="true"
+            tools:visibility="visible"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        />
+
+</android.support.design.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/noticeLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/notificationListView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="380dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/notifications"
+                style="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/cancelNotification"
+                android:layout_toStartOf="@+id/cancelNotification" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/cancelNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_cancel_white"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_4dp"
+                android:layout_marginBottom="@dimen/_4dp"
+                />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/notificationListView"
+            android:background="@color/white_t"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="@dimen/_100dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical"
+            app:adapterNotification="@{data.notificationObservableArrayList}"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:itemCount="2"
+            tools:listitem="@layout/jobs_adapter"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</FrameLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/banner"
+        android:layout_width="@dimen/_120dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/no_image" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/msg"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_8dp"
+            android:paddingTop="@dimen/_4dp"
+            android:paddingRight="@dimen/_8dp"
+            android:paddingBottom="@dimen/_2dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="msg"
+            android:textColor="@color/moreDarkgrey" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/msg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/_5dp"
+            android:layout_marginBottom="@dimen/_6dp"
+            android:gravity="center_vertical">
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:scaleType="centerInside"
+
+                android:src="@mipmap/ic_launcher" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_4dp"
+                android:paddingTop="@dimen/_8dp"
+                android:paddingRight="@dimen/_8dp"
+                android:paddingBottom="@dimen/_8dp"
+                android:text="Boldsky"
+                android:textColor="@color/grayDark" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

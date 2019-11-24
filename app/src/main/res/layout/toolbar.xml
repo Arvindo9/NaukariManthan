@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.solution.naukarimanthan.ui.dashboard.DashboardViewModel" />
+
+        <variable
+            name="specialActivityData"
+            type="com.solution.naukarimanthan.ui.special_jobs.SpecialJobsViewMode" />
+
+
+        <variable
+            name="dataBinding"
+            type="com.solution.naukarimanthan.utils.BindingUtils" />
+    </data>
+
+<!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize">-->
+
+    <android.support.v7.widget.Toolbar
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_arrow_back"
+                android:id="@+id/backHome"
+                android:visibility="gone"
+                />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo_small"
+                android:id="@+id/homeButton"
+                android:onClick="@{() -> data.onHomeButtonClick()}"
+                android:layout_toEndOf="@id/backHome"
+                android:layout_toRightOf="@id/backHome" />
+
+            <RelativeLayout
+                android:layout_toLeftOf="@+id/layoutIcon"
+                android:id="@+id/titleLayout"
+                android:onClick="@{() -> data.onCategoryClick()}"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/homeButton"
+                android:layout_toEndOf="@id/homeButton"
+                android:layout_marginLeft="@dimen/_10dp"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_toStartOf="@+id/layoutIcon">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="4dp"
+                    android:maxLines="1"
+                    android:text="@string/allCategory"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/subtitleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/categoryText"
+                    android:text="@{dataBinding.areaLocation}"
+                    android:maxLines="1"
+                    tools:text="Lucknow, Uttar pardesh"
+                    android:textSize="@dimen/_12sp"
+                    android:textColor="@color/white"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:visibility="gone"
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    style="@style/TextAppearance.AppCompat.SearchResult.Title"
+                    tools:text="title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/notificationIcon"
+                    style="@style/TextAppearance.AppCompat.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:elevation="@dimen/_4dp"
+                    android:padding="@dimen/_8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:srcCompat="@drawable/ic_notifications"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/searchIcon"
+                    style="@style/TextAppearance.AppCompat.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:elevation="@dimen/_4dp"
+                    android:padding="@dimen/_8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:srcCompat="@drawable/ic_search"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:onClick="@{() -> data.onRefreshClick()}"
+                    android:id="@+id/refreshIcon"
+                    style="@style/TextAppearance.AppCompat.Menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:elevation="@dimen/_4dp"
+                    android:padding="@dimen/_8dp"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    app:srcCompat="@drawable/ic_refresh"/>
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@{dataBinding.progressBarVisibility.get()}"-->
+                <!--tools:text="kdfjgkdfg"/>-->
+
+<!--
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/progressbar"
+                tools:visibility="visible"
+                android:visibility="@{dataBinding.progressBarVisibility ? View.VISIBLE : View.GONE}"
+                />
+-->
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+<!--
+    <RelativeLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        android:elevation="@dimen/_4dp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/clearBtn"
+            android:drawableLeft="@drawable/ic_search_gray"
+            android:drawablePadding="@dimen/_10dp"
+            android:background="@android:color/white"
+            android:hint="Search"
+            android:maxLines="1"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            android:padding="@dimen/_10dp"
+            android:singleLine="true"
+            android:layout_toStartOf="@+id/clearBtn"
+            android:drawableStart="@drawable/ic_search_gray"
+            />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/clearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_4dp"
+            android:padding="@dimen/_10dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_close"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_4dp" />
+    </RelativeLayout>-->
+<!--</RelativeLayout>-->
+</layout>
